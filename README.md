@@ -1,6 +1,6 @@
 # puredns-docker
 
-![Build and Push Docker Image](https://github.com/jackwillis/puredns-docker/actions/workflows/docker-build.yaml/badge.svg)
+[![Build and Push Docker Image](https://github.com/jackwillis/puredns-docker/actions/workflows/docker-build.yaml/badge.svg)](https://github.com/jackwillis/puredns-docker/actions/workflows/docker-build.yaml)
 
 Docker container for [**puredns**](https://github.com/d3mondev/puredns) - a fast domain resolver and subdomain bruteforcing tool based on [**massdns**](https://github.com/blechschmidt/massdns).
 
