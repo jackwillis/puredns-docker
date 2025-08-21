@@ -3,7 +3,7 @@ FROM golang:alpine AS builder
 RUN apk add --no-cache git make gcc musl-dev curl
 
 WORKDIR /opt
-RUN git clone https://github.com/blechschmidt/massdns.git
+RUN git clone --depth 1 --branch v1.1.0 https://github.com/blechschmidt/massdns.git
 RUN cd massdns && make && make install
 
 RUN go install github.com/d3mondev/puredns/v2@latest
