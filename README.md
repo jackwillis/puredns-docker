@@ -6,7 +6,7 @@ Pinned to puredns `v2@latest` and massdns `70331f6`. Automatically rebuilt weekl
 
 ## Why Docker?
 
-The [massdns](https://github.com/blechschmidt/massdns) dependency uses Linux-specific system calls (`epoll`) that are not available on macOS. This Docker container provides cross-platform compatibility while simplifying installation. It includes pre-configured trusted DNS resolvers.
+While [massdns](https://github.com/blechschmidt/massdns) can be compiled for macOS, the Linux version uses `epoll` for significantly better performance with concurrent DNS queries. This Docker container provides the Linux build, simplifies installation, and includes pre-configured trusted DNS resolvers.
 
 ## Quick Start
 
