@@ -2,10 +2,12 @@
 
 Docker container for [puredns](https://github.com/d3mondev/puredns) - a fast domain resolver and subdomain bruteforcing tool.
 
+Pinned to puredns `v2@latest`.
+
 ## Quick Start
 
 ```bash
-docker run --rm -i -v $(PWD):/data ghcr.io/jackwillis/puredns-docker [command] [args]
+docker run --rm -it -v $(PWD):/data ghcr.io/jackwillis/puredns-docker [command] [args]
 ```
 
 Files in your current directory are accessible to the container.
@@ -14,11 +16,11 @@ Files in your current directory are accessible to the container.
 
 ```bash
 # Resolve domains
-docker run --rm -i -v $(PWD):/data ghcr.io/jackwillis/puredns-docker resolve domains.txt
+docker run --rm -it -v $(PWD):/data ghcr.io/jackwillis/puredns-docker resolve domains.txt
 
 # Bruteforce subdomains
-docker run --rm -i -v $(PWD):/data ghcr.io/jackwillis/puredns-docker bruteforce wordlist.txt example.com
+docker run --rm -it -v $(PWD):/data ghcr.io/jackwillis/puredns-docker bruteforce wordlist.txt example.com
 
 # Use custom resolvers
-docker run --rm -i -v $(PWD):/data ghcr.io/jackwillis/puredns-docker resolve domains.txt -r resolvers.txt
+docker run --rm -it -v $(PWD):/data ghcr.io/jackwillis/puredns-docker resolve domains.txt -r resolvers.txt
 ```
