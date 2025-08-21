@@ -1,8 +1,14 @@
 # puredns-docker
 
+![Build and Push Docker Image](https://github.com/jackwillis/puredns-docker/actions/workflows/docker-build.yaml/badge.svg)
+
 Docker container for [**puredns**](https://github.com/d3mondev/puredns) - a fast domain resolver and subdomain bruteforcing tool based on [**massdns**](https://github.com/blechschmidt/massdns).
 
 Automatically rebuilt weekly with puredns `v2@latest` and massdns [`70331f6`](https://github.com/blechschmidt/massdns/commit/70331f618410de87d0eb478a290ec7f085831d4f).
+
+```bash
+docker pull ghcr.io/jackwillis/puredns
+```
 
 ## Why Docker?
 
@@ -12,13 +18,13 @@ While massdns can be compiled for macOS, the Linux version uses [`epoll`](https:
 
 ```bash
 # Basic usage
-docker run --rm -it -v $(PWD):/data ghcr.io/jackwillis/puredns --help
+docker run --rm -it -v $(pwd):/data ghcr.io/jackwillis/puredns --help
 
 # Resolve domains
-docker run --rm -it -v $(PWD):/data ghcr.io/jackwillis/puredns resolve domains.txt
+docker run --rm -it -v $(pwd):/data ghcr.io/jackwillis/puredns resolve domains.txt
 
 # Bruteforce subdomains
-docker run --rm -it -v $(PWD):/data ghcr.io/jackwillis/puredns bruteforce wordlist.txt example.com
+docker run --rm -it -v $(pwd):/data ghcr.io/jackwillis/puredns bruteforce wordlist.txt example.com
 
 # Pull latest Docker image
 docker pull ghcr.io/jackwillis/puredns
