@@ -2,7 +2,7 @@
 
 Docker container for [puredns](https://github.com/d3mondev/puredns) - a fast domain resolver and subdomain bruteforcing tool.
 
-Pinned to puredns `v2@latest`. Automatically rebuilt weekly.
+Pinned to puredns `v2@latest` and massdns `70331f6`. Automatically rebuilt weekly.
 
 ## Why Docker?
 
