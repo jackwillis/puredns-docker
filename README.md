@@ -2,23 +2,30 @@
 
 Docker container for [puredns](https://github.com/d3mondev/puredns) - a fast domain resolver and subdomain bruteforcing tool.
 
-Pinned to puredns `v2@latest` and massdns `70331f6`. Automatically rebuilt weekly.
+Automatically rebuilt weekly with puredns `v2@latest` and massdns [`70331f6`](https://github.com/blechschmidt/massdns/commit/70331f618410de87d0eb478a290ec7f085831d4f).
 
 ## Why Docker?
 
-While [massdns](https://github.com/blechschmidt/massdns) can be compiled for macOS, the Linux version uses `epoll` for significantly better performance with concurrent DNS queries. This Docker container provides the Linux build, simplifies installation, and includes pre-configured DNS resolvers and trusted DNS resolvers.
+While [massdns](https://github.com/blechschmidt/massdns) can be compiled for macOS, the Linux version uses [`epoll`](https://en.wikipedia.org/wiki/Epoll) for significantly better performance with concurrent DNS queries. This container provides the Linux build with pre-configured resolvers from [trickest/resolvers](https://github.com/trickest/resolvers).
 
-## Quick Start
+## Usage
 
 ```bash
+# Basic usage
 docker run --rm -v $(PWD):/data ghcr.io/jackwillis/puredns --help
+
+# Resolve domains
+docker run --rm -v $(PWD):/data ghcr.io/jackwillis/puredns resolve domains.txt
+
+# Bruteforce subdomains
+docker run --rm -v $(PWD):/data ghcr.io/jackwillis/puredns bruteforce wordlist.txt example.com
 ```
 
-Files in your current directory are accessible to the container.
+Files in your current directory are accessible to the container via the `/data` volume mount.
 
-## Fish support
+## Fish shell integration
 
-If you are using Fish shell, run this once to add `puredns`, `puredns-update`, and tab completions to your environment:
+If you use Fish shell, run this once to add aliases and tab completions:
 
 ```fish
 function puredns --description "Run puredns via Docker"
@@ -42,9 +49,10 @@ complete -c puredns -n "__fish_seen_subcommand_from bruteforce" -F -d "Wordlist 
 ' > ~/.config/fish/completions/puredns.fish
 ```
 
-Now you can run:
+Usage examples:
 
 ```fish
-puredns-update
-puredns --help
+puredns resolve domains.txt
+puredns bruteforce wordlist.txt example.com
+puredns-update  # Pull latest Docker image
 ```
