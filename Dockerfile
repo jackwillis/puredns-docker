@@ -1,4 +1,4 @@
-FROM golang:alpine AS builder
+FROM golang:1.25-alpine AS builder
 
 RUN apk add --no-cache git make gcc musl-dev curl
 
@@ -20,13 +20,13 @@ RUN curl --fail --silent --show-error --location \
     https://raw.githubusercontent.com/trickest/resolvers/refs/heads/main/resolvers-trusted.txt \
     && test -s resolvers-trusted.txt || (echo "Failed to download trusted resolvers file" && exit 1)
 
-FROM alpine:latest
+FROM alpine
 
 RUN apk add --no-cache ca-certificates
 COPY --from=builder /usr/local/bin/massdns /usr/local/bin/
 COPY --from=builder /go/bin/puredns /usr/local/bin/
-COPY --from=builder /opt/resolvers.txt /root/.config/puredns/resolvers.txt
-COPY --from=builder /opt/resolvers-trusted.txt /root/.config/puredns/resolvers-trusted.txt
+COPY --from=builder /opt/resolvers.txt /root/.config/puredns/
+COPY --from=builder /opt/resolvers-trusted.txt /root/.config/puredns/
 
 WORKDIR /data
 ENTRYPOINT ["/usr/local/bin/puredns"]
