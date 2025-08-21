@@ -18,7 +18,7 @@ Files in your current directory are accessible to the container.
 
 ## Fish support
 
-To add `puredns`, `puredns-update`, and tab completions to your environment, run this once:
+If you are using Fish shell, run this once to add `puredns`, `puredns-update`, and tab completions to your environment:
 
 ```fish
 function puredns --description "Run puredns via Docker"
@@ -40,4 +40,11 @@ complete -c puredns -n __fish_use_subcommand -a sponsors -d "Show sponsors"
 complete -c puredns -n "__fish_seen_subcommand_from resolve" -F -d "Domains file"
 complete -c puredns -n "__fish_seen_subcommand_from bruteforce" -F -d "Wordlist file"
 ' > ~/.config/fish/completions/puredns.fish
+```
+
+Now you can run:
+
+```fish
+puredns-update
+puredns --help
 ```
