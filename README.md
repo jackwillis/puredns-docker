@@ -18,6 +18,8 @@ Files in your current directory are accessible to the container.
 
 ## Fish support
 
+Add `puredns`, `puredns-update`, and tab completions to your environment:
+
 ```fish
 function puredns --description "Run puredns via Docker"
     docker run --rm -v (pwd):/data ghcr.io/jackwillis/puredns $argv
