@@ -11,7 +11,31 @@ While [massdns](https://github.com/blechschmidt/massdns) can be compiled for mac
 ## Quick Start
 
 ```bash
-docker run --rm -it -v $(PWD):/data ghcr.io/jackwillis/puredns --help
+docker run --rm -v $(PWD):/data ghcr.io/jackwillis/puredns --help
 ```
 
 Files in your current directory are accessible to the container.
+
+## Fish support
+
+```fish
+function puredns --description "Run puredns via Docker"
+    docker run --rm -v (pwd):/data ghcr.io/jackwillis/puredns $argv
+end
+funcsave puredns
+
+function puredns-update --description "Update puredns Docker image"
+    docker pull ghcr.io/jackwillis/puredns
+end
+funcsave puredns-update
+
+# Tab completions
+echo '
+complete -c puredns -f
+complete -c puredns -n __fish_use_subcommand -a resolve -d "Resolve domains from file"
+complete -c puredns -n __fish_use_subcommand -a bruteforce -d "Bruteforce subdomains"
+complete -c puredns -n __fish_use_subcommand -a sponsors -d "Show sponsors"
+complete -c puredns -n "__fish_seen_subcommand_from resolve" -F -d "Domains file"
+complete -c puredns -n "__fish_seen_subcommand_from bruteforce" -F -d "Wordlist file"
+' > ~/.config/fish/completions/puredns.fish
+```
