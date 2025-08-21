@@ -14,7 +14,7 @@ docker pull jackwillis/puredns
 
 The Linux version of massdns (which powers puredns) uses [`epoll`](https://en.wikipedia.org/wiki/Epoll) for high-performance concurrent DNS queries. This container packages the optimized Linux build with pre-configured resolvers from [**trickest/resolvers**](https://github.com/trickest/resolvers).
 
-**macOS users:** Unfortunately, both native puredns and Docker Desktop on macOS have significant performance limitations. For intensive DNS resolution tasks, you'll need to run this container on an actual Linux server to benefit from the `epoll` optimization.
+**macOS users:** Unfortunately, both native puredns and Docker Desktop on macOS have significant performance limitations. For intensive DNS resolution tasks, you'll need to run this container on an actual Linux server.
 
 ## Usage
 
