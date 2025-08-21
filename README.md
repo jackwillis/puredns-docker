@@ -14,6 +14,8 @@ docker pull ghcr.io/jackwillis/puredns
 
 While massdns can be compiled for macOS, the Linux version uses [`epoll`](https://en.wikipedia.org/wiki/Epoll) for significantly better performance with concurrent DNS queries. This container provides the Linux build with pre-configured resolvers from [**trickest/resolvers**](https://github.com/trickest/resolvers).
 
+**Performance Note:** I've experienced performance issues running puredns on macOS and have been testing on a Linux dedicated server for better results.
+
 ## Usage
 
 ```bash
