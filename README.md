@@ -1,12 +1,12 @@
 # puredns-docker
 
-Docker container for [**puredns**](https://github.com/d3mondev/puredns) - a fast domain resolver and subdomain bruteforcing tool.
+Docker container for [**puredns**](https://github.com/d3mondev/puredns) - a fast domain resolver and subdomain bruteforcing tool based on [**massdns**](https://github.com/blechschmidt/massdns).
 
 Automatically rebuilt weekly with puredns `v2@latest` and massdns [`70331f6`](https://github.com/blechschmidt/massdns/commit/70331f618410de87d0eb478a290ec7f085831d4f).
 
 ## Why Docker?
 
-While [**massdns**](https://github.com/blechschmidt/massdns) can be compiled for macOS, the Linux version uses [`epoll`](https://en.wikipedia.org/wiki/Epoll) for significantly better performance with concurrent DNS queries. This container provides the Linux build with pre-configured resolvers from [**trickest/resolvers**](https://github.com/trickest/resolvers).
+While massdns can be compiled for macOS, the Linux version uses [`epoll`](https://en.wikipedia.org/wiki/Epoll) for significantly better performance with concurrent DNS queries. This container provides the Linux build with pre-configured resolvers from [**trickest/resolvers**](https://github.com/trickest/resolvers).
 
 ## Usage
 
