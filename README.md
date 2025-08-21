@@ -19,6 +19,9 @@ docker run --rm -v $(PWD):/data ghcr.io/jackwillis/puredns resolve domains.txt
 
 # Bruteforce subdomains
 docker run --rm -v $(PWD):/data ghcr.io/jackwillis/puredns bruteforce wordlist.txt example.com
+
+# Pull latest Docker image
+docker pull ghcr.io/jackwillis/puredns
 ```
 
 Files in your current directory are accessible to the container via the `/data` volume mount.
