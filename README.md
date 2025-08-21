@@ -10,11 +10,11 @@ Automatically rebuilt weekly with puredns `v2@latest` and massdns [`70331f6`](ht
 docker pull jackwillis/puredns
 ```
 
-## Why Docker?
+## Performance considerations
 
-While massdns can be compiled for macOS, the Linux version uses [`epoll`](https://en.wikipedia.org/wiki/Epoll) for significantly better performance with concurrent DNS queries. This container provides the Linux build with pre-configured resolvers from [**trickest/resolvers**](https://github.com/trickest/resolvers).
+The Linux version of massdns (which powers puredns) uses [`epoll`](https://en.wikipedia.org/wiki/Epoll) for high-performance concurrent DNS queries. This container packages the optimized Linux build with pre-configured resolvers from [**trickest/resolvers**](https://github.com/trickest/resolvers).
 
-**Performance Note:** I've experienced performance issues running puredns on macOS and have been testing on a Linux dedicated server for better results.
+**macOS users:** Unfortunately, both native puredns and Docker Desktop on macOS have significant performance limitations. For intensive DNS resolution tasks, you'll need to run this container on an actual Linux server to benefit from the `epoll` optimization.
 
 ## Usage
 
