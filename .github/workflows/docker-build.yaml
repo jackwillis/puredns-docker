@@ -36,5 +36,5 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-        tags: ghcr.io/${{ github.repository }}:latest
+        tags: ghcr.io/jackwillis/puredns:latest
         platforms: linux/amd64,linux/arm64
