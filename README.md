@@ -11,16 +11,3 @@ docker run --rm -it -v $(PWD):/data ghcr.io/jackwillis/puredns-docker --help
 ```
 
 Files in your current directory are accessible to the container.
-
-## Examples
-
-```bash
-# Resolve domains
-docker run --rm -it -v $(PWD):/data ghcr.io/jackwillis/puredns-docker resolve domains.txt
-
-# Bruteforce subdomains
-docker run --rm -it -v $(PWD):/data ghcr.io/jackwillis/puredns-docker bruteforce wordlist.txt example.com
-
-# Use custom resolvers
-docker run --rm -it -v $(PWD):/data ghcr.io/jackwillis/puredns-docker resolve domains.txt -r resolvers.txt
-```
