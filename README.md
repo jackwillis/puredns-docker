@@ -7,7 +7,7 @@ Docker container for [**puredns**](https://github.com/d3mondev/puredns) - a fast
 Automatically rebuilt weekly with puredns `v2@latest` and massdns [`70331f6`](https://github.com/blechschmidt/massdns/commit/70331f618410de87d0eb478a290ec7f085831d4f).
 
 ```bash
-docker pull ghcr.io/jackwillis/puredns
+docker pull jackwillis/puredns
 ```
 
 ## Why Docker?
@@ -20,16 +20,16 @@ While massdns can be compiled for macOS, the Linux version uses [`epoll`](https:
 
 ```bash
 # Basic usage
-docker run --rm -it -v $(pwd):/data ghcr.io/jackwillis/puredns --help
+docker run --rm -it -v $(pwd):/data jackwillis/puredns --help
 
 # Resolve domains
-docker run --rm -it -v $(pwd):/data ghcr.io/jackwillis/puredns resolve domains.txt
+docker run --rm -it -v $(pwd):/data jackwillis/puredns resolve domains.txt
 
 # Bruteforce subdomains
-docker run --rm -it -v $(pwd):/data ghcr.io/jackwillis/puredns bruteforce wordlist.txt example.com
+docker run --rm -it -v $(pwd):/data jackwillis/puredns bruteforce wordlist.txt example.com
 
 # Pull latest Docker image
-docker pull ghcr.io/jackwillis/puredns
+docker pull jackwillis/puredns
 ```
 
 Files in your current directory are accessible to the container via the `/data` volume mount.
@@ -40,12 +40,12 @@ If you use Fish shell, run this once to add aliases and tab completions:
 
 ```fish
 function puredns --description "Run puredns via Docker"
-    docker run --rm -it -v (pwd):/data ghcr.io/jackwillis/puredns $argv
+    docker run --rm -it -v (pwd):/data jackwillis/puredns $argv
 end
 funcsave puredns
 
 function puredns-update --description "Update puredns Docker image"
-    docker pull ghcr.io/jackwillis/puredns
+    docker pull jackwillis/puredns
 end
 funcsave puredns-update
 
