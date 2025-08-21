@@ -7,7 +7,7 @@ Pinned to puredns `v2@latest`. Automatically rebuilt weekly.
 ## Quick Start
 
 ```bash
-docker run --rm -it -v $(PWD):/data ghcr.io/jackwillis/puredns-docker [command] [args]
+docker run --rm -it -v $(PWD):/data ghcr.io/jackwillis/puredns-docker --help
 ```
 
 Files in your current directory are accessible to the container.
