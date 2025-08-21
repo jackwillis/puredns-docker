@@ -10,7 +10,10 @@ RUN go install github.com/d3mondev/puredns/v2@latest
 
 # Download list of trusted public DNS resolvers
 # https://github.com/trickest/resolvers
-RUN curl -O https://raw.githubusercontent.com/trickest/resolvers/refs/heads/main/resolvers-trusted.txt
+RUN curl --fail --silent --show-error --location \
+    --output resolvers-trusted.txt \
+    https://raw.githubusercontent.com/trickest/resolvers/refs/heads/main/resolvers-trusted.txt \
+    && test -s resolvers-trusted.txt || (echo "Failed to download resolvers file" && exit 1)
 
 FROM alpine:latest
 
