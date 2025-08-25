@@ -1,8 +1,7 @@
 # puredns-docker
 
-[![Docker Hub: jackwillis/puredns](https://img.shields.io/badge/docker-jackwillis%2Fpuredns-blue?logo=docker)](https://hub.docker.com/r/jackwillis/puredns)
-
 [![Build and Push Docker Image](https://github.com/jackwillis/puredns-docker/actions/workflows/docker-build.yaml/badge.svg)](https://github.com/jackwillis/puredns-docker/actions/workflows/docker-build.yaml)
+[![Docker Hub: jackwillis/puredns](https://img.shields.io/badge/Docker_Hub-jackwillis%2Fpuredns-blue?logo=docker)](https://hub.docker.com/r/jackwillis/puredns)
 
 Docker container for [**puredns**](https://github.com/d3mondev/puredns) - a fast domain resolver and subdomain bruteforcing tool based on [**massdns**](https://github.com/blechschmidt/massdns).
 
@@ -14,7 +13,7 @@ docker pull jackwillis/puredns
 
 ## Performance considerations
 
-**macOS users:** Native puredns/massdns on macOS lacks [`epoll`](https://en.wikipedia.org/wiki/Epoll) support, limiting performance. This container provides the optimized Linux build, but Docker Desktop adds its own overhead on macOS. For best results, run on a Linux host or VM (UTM, VMware, etc.) rather than Docker Desktop.
+**macOS users:** Native massdns on macOS lacks [`epoll`](https://en.wikipedia.org/wiki/Epoll) support, limiting performance. This container provides the optimized Linux build, but Docker Desktop adds its own overhead on macOS. For best results, run on a Linux host or VM (UTM, VMware, etc.) rather than Docker Desktop.
 
 ## Usage
 
