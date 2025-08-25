@@ -1,10 +1,12 @@
 # puredns-docker
 
+[![Docker Hub: jackwillis/puredns](https://img.shields.io/badge/docker-jackwillis%2Fpuredns-blue?logo=docker)](https://hub.docker.com/r/jackwillis/puredns)
+
 [![Build and Push Docker Image](https://github.com/jackwillis/puredns-docker/actions/workflows/docker-build.yaml/badge.svg)](https://github.com/jackwillis/puredns-docker/actions/workflows/docker-build.yaml)
 
 Docker container for [**puredns**](https://github.com/d3mondev/puredns) - a fast domain resolver and subdomain bruteforcing tool based on [**massdns**](https://github.com/blechschmidt/massdns).
 
-Automatically rebuilt weekly with puredns `v2@latest` and massdns [`70331f6`](https://github.com/blechschmidt/massdns/commit/70331f618410de87d0eb478a290ec7f085831d4f).
+Automatically rebuilt weekly with puredns `v2@latest` and massdns [`v1.1.0-15-g70331f6`](https://github.com/blechschmidt/massdns/commit/70331f618410de87d0eb478a290ec7f085831d4f).
 
 ```bash
 docker pull jackwillis/puredns
